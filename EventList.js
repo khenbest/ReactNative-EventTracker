@@ -24,12 +24,11 @@ export default class EventList extends Component {
         const events = require("./db.json").events.map(e => ({ ...e, date: new Date(e.date) }));
         this.setState({ events })
     }
-    handleAddEvent() {
-        this.props.navigation.navigate("Form")
+    handleAddEvent = () => {
+        this.props.navigation.navigate("Form");
     }
     render() {
         return [
-
             <FlatList
                 style={styles.list}
                 data={this.state.events}
